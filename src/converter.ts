@@ -1,13 +1,13 @@
 function typeAs(value: string) {
-    const toStringDataTypes = ["keyword", "text"]
-    const toNumberDataTypes = ["float", "integer", "double", "long"]
+    const toStringDataTypes = ["keyword", "text", "ip", "version"]
+    const toNumberDataTypes = ["float", "integer", "double", "long", "short"]
     const toDateDataTypes = ["date"]
     const toBoleanDataTypes = ["boolean"]
 
-    if (toStringDataTypes.includes(value)) return "string | string[]"
-    if (toNumberDataTypes.includes(value)) return "number | number[]"
-    if (toDateDataTypes.includes(value)) return "string | string[] | number | number[]"
-    if (toBoleanDataTypes.includes(value)) return "boolean | boolean[]"
+    if (toStringDataTypes.includes(value)) return "string | string[] | null"
+    if (toNumberDataTypes.includes(value)) return "number | number[] | string | string[] | null"
+    if (toDateDataTypes.includes(value)) return "string | string[] | number | number[] | null"
+    if (toBoleanDataTypes.includes(value)) return "boolean | boolean[] | null"
     return "any | any[]"
 }
 
