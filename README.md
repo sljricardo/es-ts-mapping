@@ -12,7 +12,7 @@ npm install
 
 ## Usage
 
-After the command start we can use a stringify version of Elasticsearch mapping object
+After the command start, we can use a stringify version of Elasticsearch mapping object
 
 ```bash
 npm start "{\"author\":{\"properties\":{\"name\":{\"type\":\"text\"}}},\"content\":{\"type\":\"text\"},\"created_at\":{\"type\":\"date\"},\"product_id\":{\"type\":\"integer\"},\"rating\":{\"type\":\"float\"}}" 
@@ -32,25 +32,11 @@ export type NameType = {
 }
 ```
 
+### TODO
 
-{
-  "author": {
-    "properties": {
-      "name": {
-        "type": "text"
-      },
-    }
-  },
-  "content": {
-    "type": "text"
-  },
-  "created_at": {
-    "type": "date"
-  },
-  "product_id": {
-    "type": "integer"
-  },
-  "rating": {
-    "type": "float"
-  }
-}
+[] Add Tests
+[] Add multiple output formats (console, file)
+[] Add direct communication with Elasticsearch to get the mapping
+[] Allow accept the full mapping output from Elasticsearch
+[] Add read mapping from a file
+[] Add the inverse feature, from typescript to Elasticsearch
