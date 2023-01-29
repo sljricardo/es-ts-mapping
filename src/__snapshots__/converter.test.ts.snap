@@ -1,13 +1,32 @@
 // Vitest Snapshot v1
 
 exports[`expect to get typescript object type 1`] = `
-"export type NameType = {
+"
+export type reviewsElasticType = {
  author: {
-  name: string | string[]
+  email: string | string[]
+  first_name: string | string[]
+  last_name: string | string[]
  },
  content: string | string[]
  created_at: string | string[] | number | number[]
+ date: number | number[]
  product_id: number | number[]
  rating: number | number[]
-}"
+ reviews: {
+  place: string | string[]
+ },
+}
+
+export type productsElasticType = {
+ created: string | string[] | number | number[]
+ description: string | string[]
+ in_stock: number | number[]
+ is_active: boolean | boolean[]
+ name: string | string[]
+ price: number | number[]
+ sold: number | number[]
+ tags: string | string[]
+}
+"
 `;
