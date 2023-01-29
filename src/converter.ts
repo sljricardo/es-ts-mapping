@@ -18,9 +18,9 @@ function innerMapping(object: { [key: string]: any }, count = 1) {
     Object.keys(object).forEach(key => {
         const identation = [...Array(count)].map(k => " ").join("")
         if (object[key]?.properties) {
-            internal += `${identation}${key}: {\n${innerMapping(object[key]?.properties, count + 1)}${identation}},\n`
+            internal += `${identation}${key}?: {\n${innerMapping(object[key]?.properties, count + 1)}${identation}},\n`
         } else {
-            internal += `${identation}${key}: ${typeAs(object[key]?.type)}\n`
+            internal += `${identation}${key}?: ${typeAs(object[key]?.type)}\n`
         }
     });
 
