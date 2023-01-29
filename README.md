@@ -29,17 +29,17 @@ npm start "{\"reviews\":{\"mappings\":{\"properties\":{\"author\":{\"properties\
 ```typescript
 export type reviewsElasticType = {
  author?: {
-  email?: string | string[]
-  first_name?: string | string[]
-  last_name?: string | string[]
+  email?: string | string[] | null
+  first_name?: string | string[] | null
+  last_name?: string | string[] | null
  },
- content?: string | string[]
- created_at?: string | string[] | number | number[]
- date?: number | number[]
- product_id?: number | number[]
- rating?: number | number[]
+ content?: string | string[] | null
+ created_at?: string | string[] | number | number[] | null
+ date?: number | number[] | string | string[] | null
+ product_id?: number | number[] | string | string[] | null
+ rating?: number | number[] | string | string[] | null
  reviews?: {
-  place?: string | string[]
+  place?: string | string[] | null
  },
 }
 ```
