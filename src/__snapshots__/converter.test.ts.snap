@@ -2,12 +2,12 @@
 
 exports[`expect to get typescript object type 1`] = `
 "export type NameType = {
-  author: {
-    name: string | string[]
-  },
-  content: string | string[]
-  created_at: string | string[] | number | number[]
-  product_id: number | number[]
-  rating: number | number[]
+ author: {
+  name: string | string[]
+ },
+ content: string | string[]
+ created_at: string | string[] | number | number[]
+ product_id: number | number[]
+ rating: number | number[]
 }"
 `;
