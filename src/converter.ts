@@ -12,7 +12,7 @@ function typeAs(value: string) {
 export function addTypeToObject(object: { [key: string]: any }, count = 1) {
     let internal = "\n"
     Object.keys(object).forEach(key => {
-        const identation = [...Array(count)].map(k => "  ").join("")
+        const identation = [...Array(count)].map(k => " ").join("")
         if (object[key]?.type === undefined) {
             internal += `${identation}${key}: {${addTypeToObject(object[key]?.properties, count + 1)}${identation}},\n`
         } else {

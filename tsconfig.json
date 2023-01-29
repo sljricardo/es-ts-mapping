@@ -4,12 +4,13 @@
         "module": "ESNext",
         "outDir": "./dist",
         "rootDir": "./src",
-        "strict": false,
         "moduleResolution": "node",
         "esModuleInterop": true,
     },
     "exclude": [
         "./node_modules",
-        "./dist"
+        "./dist",
+        "src/**/*.spec.ts",
+        "src/**/*.test.ts"
     ]
 }

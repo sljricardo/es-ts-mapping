@@ -34,7 +34,7 @@ export type NameType = {
 
 ### TODO
 
-- [ ] Add Tests
+- [x] Add Tests
 - [ ] Add multiple output formats (console, file)
 - [ ] Add direct communication with Elasticsearch to get the mapping
 - [ ] Allow accept the full mapping output from Elasticsearch
