@@ -12,23 +12,35 @@ npm install
 
 ## Usage
 
-After the command start, we can use a stringify version of Elasticsearch mapping object
+To get the mappings from all indexes in Elasticsearch run the query
 
 ```bash
-npm start "{\"author\":{\"properties\":{\"name\":{\"type\":\"text\"}}},\"content\":{\"type\":\"text\"},\"created_at\":{\"type\":\"date\"},\"product_id\":{\"type\":\"integer\"},\"rating\":{\"type\":\"float\"}}" 
+GET /_all/_mapping
+```
+
+After the command start, we can use a stringify version of Elasticsearch output mapping object
+
+```bash
+npm start "{\"reviews\":{\"mappings\":{\"properties\":{\"author\":{\"properties\":{\"email\":{\"type\":\"keyword\"},\"first_name\":{\"type\":\"text\"},\"last_name\":{\"type\":\"text\"}}},\"content\":{\"type\":\"text\"},\"created_at\":{\"type\":\"date\"},\"date\":{\"type\":\"long\"},\"product_id\":{\"type\":\"integer\"},\"rating\":{\"type\":\"float\"},\"reviews\":{\"type\":\"nested\",\"properties\":{\"place\":{\"type\":\"text\",\"fields\":{\"keyword\":{\"type\":\"keyword\",\"ignore_above\":256}}}}}}}}}" 
 ```
 
 **Output**
 
 ```typescript
-export type NameType = {
-  author: {
-    name: string | string[]
-  },
-  content: string | string[]
-  created_at: string | string[] | number | number[]
-  product_id: number | number[]
-  rating: number | number[]
+export type reviewsElasticType = {
+ author?: {
+  email?: string | string[]
+  first_name?: string | string[]
+  last_name?: string | string[]
+ },
+ content?: string | string[]
+ created_at?: string | string[] | number | number[]
+ date?: number | number[]
+ product_id?: number | number[]
+ rating?: number | number[]
+ reviews?: {
+  place?: string | string[]
+ },
 }
 ```
 
