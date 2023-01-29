@@ -34,9 +34,9 @@ export type NameType = {
 
 ### TODO
 
-[] Add Tests
-[] Add multiple output formats (console, file)
-[] Add direct communication with Elasticsearch to get the mapping
-[] Allow accept the full mapping output from Elasticsearch
-[] Add read mapping from a file
-[] Add the inverse feature, from typescript to Elasticsearch
+- [ ] Add Tests
+- [ ] Add multiple output formats (console, file)
+- [ ] Add direct communication with Elasticsearch to get the mapping
+- [ ] Allow accept the full mapping output from Elasticsearch
+- [ ] Add read mapping from a file
+- [ ] Add the inverse feature, from typescript to Elasticsearch
