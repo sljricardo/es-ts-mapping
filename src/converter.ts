@@ -15,7 +15,11 @@ export function convertToTypescript(
   let output = "";
   for (const key in object) {
     if (object[key].mappings) {
-      output += `\nexport ${type} ${key}ElasticType = {\n`;
+      const as =
+        type === "type"
+          ? `${type} ${key}ElasticType =`
+          : `${type} ${key}ElasticType`;
+      output += `\nexport ${as} {\n`;
       output += builder(
         object[key].mappings.properties
       );

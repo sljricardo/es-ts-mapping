@@ -44,7 +44,10 @@ if (!output) {
 const encoder = new TextEncoder();
 
 const encodedData = encoder.encode(
-  convertToTypescript(JSON.parse(data))
+  convertToTypescript(
+    JSON.parse(data),
+    type || "type"
+  )
 );
 
 await Deno.writeFile(output, encodedData);

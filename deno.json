@@ -1,5 +1,6 @@
 {
   "tasks": {
-    "dev": "deno run --watch es2ts.ts"
+    "dev": "deno run --watch es2ts.ts",
+    "compile:all:bin": "deno compile --allow-read=. --allow-write=. --target x86_64-unknown-linux-gnu --output ./bin/es2ts_x86_64_linux ./es2ts.ts && deno compile --allow-read=. --allow-write=. --target x86_64-pc-windows-msvc --output ./bin/es2ts_x86_64_windows.exe ./es2ts.ts && deno compile --allow-read=. --allow-write=. --target x86_64-apple-darwin --output ./bin/es2ts_x86_64_mac ./es2ts.ts && deno compile --allow-read=. --allow-write=. --target aarch64-apple-darwin --output ./bin/es2ts_aarch64_mac ./es2ts.ts"
   }
 }

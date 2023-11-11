@@ -4,4 +4,4 @@ dist
 coverage
 mapping.json
 mapping.ts
-es2ts
+bin

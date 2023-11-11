@@ -46,3 +46,52 @@ export type indexElasticType = {
     output
   );
 });
+
+Deno.test(
+  "builder should output an interface if -t interface was provided",
+  () => {
+    const input = {
+      results: {
+        mappings: {
+          properties: {
+            id: {
+              type: "text",
+            },
+            field: {
+              type: "integer",
+            },
+          },
+        },
+      },
+      index: {
+        mappings: {
+          properties: {
+            name: {
+              type: "text",
+            },
+            age: {
+              type: "integer",
+            },
+          },
+        },
+      },
+    };
+
+    const output = `
+export interface resultsElasticType {
+  id?: string | string[] | null
+  field?: number | number[] | string | string[] | null
+}
+
+export interface indexElasticType {
+  name?: string | string[] | null
+  age?: number | number[] | string | string[] | null
+}
+`;
+
+    assertEquals(
+      convertToTypescript(input, "interface"),
+      output
+    );
+  }
+);
