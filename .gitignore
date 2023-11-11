@@ -2,3 +2,5 @@
 node_modules
 dist
 coverage
+mapping.json
+es2ts

@@ -1,14 +1,7 @@
-# ES-TS-Mapper
+# es2ts
 
 Convert Elasticsearch index Mapping to Typescript types.
-
-## Installation
-
-Clone the project
-
-```bash
-npm install 
-```
+If you are using Elasticsearch with Typescript, you can use this tool to convert the Elasticsearch index mapping to Typescript types.
 
 ## Usage
 
@@ -21,7 +14,7 @@ GET /_all/_mapping
 After the command start, we can use a stringify version of Elasticsearch output mapping object
 
 ```bash
-npm start "{\"reviews\":{\"mappings\":{\"properties\":{\"author\":{\"properties\":{\"email\":{\"type\":\"keyword\"},\"first_name\":{\"type\":\"text\"},\"last_name\":{\"type\":\"text\"}}},\"content\":{\"type\":\"text\"},\"created_at\":{\"type\":\"date\"},\"date\":{\"type\":\"long\"},\"product_id\":{\"type\":\"integer\"},\"rating\":{\"type\":\"float\"},\"reviews\":{\"type\":\"nested\",\"properties\":{\"place\":{\"type\":\"text\",\"fields\":{\"keyword\":{\"type\":\"keyword\",\"ignore_above\":256}}}}}}}}}" 
+deno run es2ts.ts -s "{\"reviews\":{\"mappings\":{\"properties\":{\"author\":{\"properties\":{\"email\":{\"type\":\"keyword\"},\"first_name\":{\"type\":\"text\"},\"last_name\":{\"type\":\"text\"}}},\"content\":{\"type\":\"text\"},\"created_at\":{\"type\":\"date\"},\"date\":{\"type\":\"long\"},\"product_id\":{\"type\":\"integer\"},\"rating\":{\"type\":\"float\"},\"reviews\":{\"type\":\"nested\",\"properties\":{\"place\":{\"type\":\"text\",\"fields\":{\"keyword\":{\"type\":\"keyword\",\"ignore_above\":256}}}}}}}}}" 
 ```
 
 **Output**
@@ -43,12 +36,3 @@ export type reviewsElasticType = {
  },
 }
 ```
-
-### TODO
-
-- [x] Add Tests
-- [x] Accept the full mapping output from Elasticsearch
-- [ ] Add multiple output formats (console, file)
-- [ ] Add direct communication with Elasticsearch to get the mapping
-- [ ] Add read mapping from a file
-- [ ] Add the inverse feature, from typescript to Elasticsearch
