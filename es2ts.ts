@@ -9,6 +9,7 @@ const output = parsedArgs.o || parsedArgs.output;
 const string = parsedArgs.s || parsedArgs.string;
 const type = parsedArgs.t || parsedArgs.type;
 
+// comment added test
 const helpMessage = `
 Usage:
 $ ./es2ts [[-s "stringify_version_of_mapping"] | [-i <input-file>]] [-o <output-file>] [-t <type|interface>]
